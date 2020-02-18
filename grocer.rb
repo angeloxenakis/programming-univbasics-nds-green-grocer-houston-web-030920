@@ -84,6 +84,18 @@ end
   # REMEMBER: This method **should** update cart
 
 def checkout(cart, coupons)
+  cart = consolidate_cart(cart)
+  cart = apply_coupons(cart, coupons)
+  cart = apply_clearance(cart)
+  total = 0
+  index = 0 
+  while index < cart.length do
+    if cart[index][:count] == 1 
+      total += cart[index][:price]
+      elsif 
+    end 
+  end
+end
   # Consult README for inputs and outputs
   #
   # This method should call
@@ -93,4 +105,3 @@ def checkout(cart, coupons)
   #
   # BEFORE it begins the work of calculating the total (or else you might have
   # some irritated customers
-end

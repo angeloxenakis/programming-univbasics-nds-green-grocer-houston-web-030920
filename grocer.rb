@@ -76,6 +76,7 @@ def apply_clearance(cart)
   while index < cart.length do
     cart_item = find_item_by_name_in_collection(coupons[index][:item], cart)
     if cart_item[:clearance]
+      cart_item[:price] -= 20%
     end
     index += 1 
   end

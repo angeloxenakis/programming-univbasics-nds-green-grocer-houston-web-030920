@@ -92,9 +92,12 @@ def checkout(cart, coupons)
   while index < cart.length do
     if cart[index][:count] == 1 
       total += cart[index][:price]
-      elsif 
+    elsif cart[index][:count] > 1
+      total += (cart[index][:price] * cart[index][:count])
     end 
+    index += 1
   end
+  total
 end
   # Consult README for inputs and outputs
   #

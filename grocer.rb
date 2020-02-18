@@ -70,8 +70,16 @@ end
   # REMEMBER: This method **should** update cart
 
 def apply_clearance(cart)
+  index = 0 
+  cart = consolidated_cart(cart)
+  cart = apply_coupons(cart, coupons)
+  while index < cart.length do
+    cart_item = find_item_by_name_in_collection(coupons[index][:item], cart)
+    if cart_item[:clearance]
+    end
+    index += 1 
+  end
   
-
 end
   # Consult README for inputs and outputs
   #

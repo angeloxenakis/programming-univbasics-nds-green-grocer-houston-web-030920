@@ -71,12 +71,9 @@ end
 
 def apply_clearance(cart)
   index = 0 
-  cart = consolidated_cart(cart)
-  cart = apply_coupons(cart, coupons)
   while index < cart.length do
-    cart_item = find_item_by_name_in_collection(coupons[index][:item], cart)
-    if cart_item[:clearance]
-      cart_item[:price] -= 20%
+    if cart_item[index][:clearance]
+      cart[index][:price] = (cart[index][:price] - (cart[index][:price] * 0.2))
     end
     index += 1 
   end

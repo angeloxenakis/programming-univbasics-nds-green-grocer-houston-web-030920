@@ -70,10 +70,12 @@ end
   # REMEMBER: This method **should** update cart
 
 def apply_clearance(cart)
+  
+
+end
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
-end
 
 def checkout(cart, coupons)
   # Consult README for inputs and outputs
